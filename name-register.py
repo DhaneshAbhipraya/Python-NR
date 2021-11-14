@@ -40,13 +40,13 @@ while True:
   wr.close()
   print("Hi, {}! Your age is {}, You're order {}".format(name,age,i))
   time.sleep(3)
-  # Open storage.py
+  # Make storage.py
   st = open("storage.py", "w")
   # Write to storage.py
   st.write("per_id = " + str(i))
   # Close storage.py
   st.close()
-  # Open log file (perlog.log)
+  # Make log file (perlog.log)
   log = open("perlog.log", "a")
   # Append to log file
   log.write("[" + str(i) + "] " + name + ", age: " + age + "\n")
