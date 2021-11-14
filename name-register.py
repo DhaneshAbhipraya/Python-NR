@@ -14,7 +14,7 @@ while True:
   # Make the name sentence-cased
   name = name[0].upper() + cname[1:]
   
-  # Make person file
+  # Make/Open person file
   wr = open(name.lower() + ".py", "w")
   # Write to person file
   wr.write("# AUTO-GENERATED\n# person number: " + str(i) + "\nimport os\nname = \"" + name + "\"\nage = " + age + "\nif input(\"Are you sure to delete " + name.lower() + ".py? (y to delete) \") == \"y\":\n\tst = open(\"storage.py\",\"w\")\n\tst.write(\"per_id = \" + str(" + str(i) + "-1))\n\tst.close()\n\tlog = open(\"perlog.log\",\"a\")\n\tlog.write(\"Deleted " + name + "\\n\")\n\tlog.close()\n\tos.remove(\"" + name.lower() + ".py\")\nelse:\n\tprint(\"Cancelled\")")
@@ -40,13 +40,13 @@ while True:
   wr.close()
   print("Hi, {}! Your age is {}, You're order {}".format(name,age,i))
   time.sleep(3)
-  # Make storage.py
+  # Make/Open storage.py
   st = open("storage.py", "w")
   # Write to storage.py
   st.write("per_id = " + str(i))
   # Close storage.py
   st.close()
-  # Make log file (perlog.log)
+  # Make/Open log file (perlog.log)
   log = open("perlog.log", "a")
   # Append to log file
   log.write("[" + str(i) + "] " + name + ", age: " + age + "\n")
