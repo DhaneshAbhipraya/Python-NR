@@ -17,7 +17,7 @@ while True:
   # Make/Open person file
   wr = open(name.lower() + ".py", "w")
   # Write to person file
-  wr.write("# AUTO-GENERATED\n# person number: " + str(i) + "\nimport os\nname = \"" + name + "\"\nage = " + age + "\nif input(\"Are you sure to delete " + name.lower() + ".py? (y to delete) \") == \"y\":\n\tst = open(\"storage.py\",\"w\")\n\tst.write(\"per_id = \" + str(" + str(i) + "-1))\n\tst.close()\n\tlog = open(\"perlog.log\",\"a\")\n\tlog.write(\"Deleted " + name + "\\n\")\n\tlog.close()\n\tos.remove(\"" + name.lower() + ".py\")\nelse:\n\tprint(\"Cancelled\")")
+  wr.write("# AUTO-GENERATED\n# person number: " + str(i) + "\nimport os\nname = " + repr(name) + "\nage = " + repr(age) + "\nif input(\"Are you sure to delete " + name.lower() + ".py? (y to delete) \") == \"y\":\n\tst = open(\"storage.py\",\"w\")\n\tst.write(\"per_id = \" + str(" + str(i) + "-1))\n\tst.close()\n\tlog = open(\"perlog.log\",\"a\")\n\tlog.write(\"Deleted " + name + "\\n\")\n\tlog.close()\n\tos.remove(\"" + name.lower() + ".py\")\nelse:\n\tprint(\"Cancelled\")")
   # What the person file looks like:
   """
   # AUTO-GENERATED
